@@ -7,23 +7,23 @@
 // 输出: 6
 // 解释: 有6个子串具有相同数量的连续1和0：“0011”，“01”，“1100”，“10”，“0011” 和 “01”。
 
-function countBinarySubstrings(s) {
-    let prev = 0, cur = 1, total = 0;
+function countBinarySubstrings (s) {
+  let prev = 0; let cur = 1; let total = 0
 
-    for (let i = 0, len = s.length - 1; i < len; i++) {
-        if (s[i] === s[i+1]) {
-            cur++
-        } else {
-            prev = cur
-            cur = 1
-        }
-
-        if (prev >= cur) {
-            total++
-        }
+  for (let i = 0, len = s.length - 1; i < len; i++) {
+    if (s[i] === s[i + 1]) {
+      cur++
+    } else {
+      prev = cur
+      cur = 1
     }
 
-    return total
+    if (prev >= cur) {
+      total++
+    }
+  }
+
+  return total
 }
 
 module.exports = countBinarySubstrings
