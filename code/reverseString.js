@@ -3,13 +3,10 @@
 // 输出: "s'teL ekat edoCteeL tsetnoc"
 
 const reverseWords = function (str) {
-  let strArr = str.split(' ')
-
-  let result = strArr.map(item => {
+  return str.match(/[\w']+/g).map(item => {
     return item.split('').reverse().join('')
-  })
-
-  return result.join(' ')
+  }).join(' ')
 }
 
 module.exports = reverseWords
+
